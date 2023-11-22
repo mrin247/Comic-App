@@ -1,0 +1,31 @@
+
+
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+
+/* Apply the font to the entire application */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: "#fafafc"; /* Set the background color of the entire body to black */
+  color: black; /* Set the text color to white for better visibility on a dark background */
+}
+
+
+.App {
+    text-align: center;
+    margin: 20px;
+  }
+  
+  form {
+    margin-bottom: 20px;
+  }
+  
+  ComicPanel {
+    margin: 10px;
+  }
+
+  
