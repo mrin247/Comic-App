@@ -8,7 +8,7 @@ import jsPDF from "jspdf";
 import { Backdrop, CircularProgress, Typography } from "@mui/material";
 
 const GeneratePage = () => {
-  const [comicData, setComicData] = useState(Array(10).fill(""));
+  const [comicData, setComicData] = useState(Array(10).fill({imageUrl:"", caption:""}));
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [imagesCreated, setImagesCreated] = useState(0);
@@ -16,11 +16,9 @@ const GeneratePage = () => {
   const handleFormSubmit = async (inputText, index) => {
     try {
       setLoading(true);
+      
 
       // Check if the image for the current input is already generated
-      if (comicData[index]) {
-        return;
-      }
 
       try {
         if (inputText) {
@@ -32,7 +30,7 @@ const GeneratePage = () => {
           // Update the mapping with the generated image
           setComicData((prevData) => {
             const newData = [...prevData];
-            newData[index] = imageUrl;
+            newData[index] = {imageUrl: imageUrl, caption: inputText};
             return newData;
           });
 
@@ -48,8 +46,10 @@ const GeneratePage = () => {
   };
 
   let pdfTitle = null;
-  const setPdfTitleCallback = (title) => {
+  let pdfAuthor = null;
+  const setPdfTitleCallback = ({title, author}) => {
     pdfTitle = title;
+    pdfAuthor = author;
 
     handleDownloadPDF();
   };
@@ -59,7 +59,7 @@ const GeneratePage = () => {
     const currentDate = new Date().toLocaleDateString();
     const pdf = new jsPDF("p", "mm", "a4");
     let title = pdfTitle.trim() !== "" ? `${pdfTitle}` : "Comic-E";
-    title += ` | Creator: Mrin | COMIC-E ${currentDate}`;
+    title += ` | Creator: ${pdfAuthor.trim()} | COMIC-E ${currentDate}`;
 
     pdf.setFontSize(16);
     pdf.text(title, 105, 10, null, null, "center");
@@ -69,9 +69,9 @@ const GeneratePage = () => {
     let x = 10;
     let y = 20;
 
-    comicData.forEach((image, index) => {
-      if (image) {
-        pdf.addImage(image, "JPEG", x, y, columnWidth, rowHeight);
+    comicData.forEach(({imageUrl, caption}, index) => {
+      if (imageUrl) {
+        pdf.addImage(imageUrl, "JPEG", x, y, columnWidth, rowHeight);
 
         x += columnWidth + 10;
 
@@ -87,8 +87,8 @@ const GeneratePage = () => {
     });
 
     // Save the PDF
-    pdf.save("comic.pdf");
-    setComicData(Array(10).fill(""));
+    pdf.save(`${pdfTitle.trim()}_${pdfAuthor.trim()}_COMIC-E_${currentDate}.pdf`);
+    setComicData(Array(10).fill({imageUrl:"", caption:""}));
     setImagesCreated(0);
   };
 

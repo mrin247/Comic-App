@@ -21,9 +21,9 @@ const ComicStrip = ({ comicData }) => {
     >
       <Box>
         <Grid container spacing={1}>
-          {comicData.map((text, index) => (
+          {comicData.map(({ imageUrl, caption }, index) => (
             <Grid item key={index} xs={12} sm={6} md={4} lg={3}>
-              {text && <ComicPanel text={text} />}
+              {imageUrl && <ComicPanel imageUrl={imageUrl} caption={caption} />}
             </Grid>
           ))}
         </Grid>
