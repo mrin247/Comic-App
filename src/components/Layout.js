@@ -9,11 +9,14 @@ import {
 } from "@mui/material";
 import { NavLink } from "react-router-dom";
 import { Footer } from "./Footer";
+import BoltIcon from '@mui/icons-material/Bolt';
 
 /**
  * @author mrin247
  * @function Layout
  **/
+
+
 
 const Layout = ({ children }) => {
   return (
@@ -42,6 +45,7 @@ const Layout = ({ children }) => {
                 marginRight: "15px",
               }}
             >
+              <BoltIcon/>
               COMIC·E
             </Link>
           </Typography>

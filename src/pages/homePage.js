@@ -15,7 +15,7 @@ const StyledButton = styled(Button)(({ theme }) => ({
     backgroundColor: "gray",
   },
   width: "30vh",
-  fontWeight:'bold'
+  fontWeight: "bold",
 }));
 
 const gradientStyle = {
@@ -34,11 +34,11 @@ const HomePage = () => {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          minHeight: "94vh",
+          minHeight: "93vh",
           overflow: "hidden",
         }}
       >
-        <Typography variant="h1" component="div" gutterBottom>
+        <Typography variant="h1" component="div" gutterBottom sx={{ fontSize: { xs: "2rem", md: "3rem", lg: "6rem" } }}>
           <span style={{ color: "black" }}>Welcome to </span>
           <span style={gradientStyle}>COMIC·E</span>
         </Typography>
