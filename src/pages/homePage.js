@@ -6,13 +6,13 @@ import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 
 // Styled component for the Button
 const StyledButton = styled(Button)(({ theme }) => ({
-  borderRadius: "40px", // Match border radius
-  height: 54, // Match height to TextField
-  backgroundColor: "black", // Set background color to black
+  borderRadius: "40px",
+  height: 54,
+  backgroundColor: "black",
   textTransform: "none",
-  color: "white", // Set text color to white
+  color: "white",
   "&:hover": {
-    backgroundColor: "gray", // Change hover background color if needed
+    backgroundColor: "gray",
   },
   width: "30vh",
   fontWeight:'bold'
@@ -34,8 +34,8 @@ const HomePage = () => {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          minHeight: "100vh",
-          overflow: "hidden", // Hide overflow to prevent scroll bars
+          minHeight: "94vh",
+          overflow: "hidden",
         }}
       >
         <Typography variant="h1" component="div" gutterBottom>

@@ -1,25 +1,18 @@
 import React, { useEffect, useState } from 'react';
-import { query } from '../api';
 import { Card, CardContent, CardMedia, Typography } from '@mui/material';
+/**
+ * @author mrin247
+ * @function ComicPanel
+ **/
 
 const ComicPanel = ({ text }) => {
   const [image, setImage] = useState(null);
   const [showText, setShowText] = useState(false);
 
   useEffect(() => {
-    const generateImage = async () => {
-      try {
-        const response = await query({ inputs: text });
-        setImage(URL.createObjectURL(response));
-      } catch (error) {
-        console.error('Error generating image:', error);
-        // Handle the error or set a default image URL
-        setImage('https://example.com/default-image.png');
-      }
-    };
 
     if (text) {
-      generateImage();
+      setImage(text);
     }
   }, [text]);
 
@@ -38,7 +31,7 @@ const ComicPanel = ({ text }) => {
         textAlign: 'center',
         position: 'relative',
         cursor: 'pointer',
-        height: '150px', // Set a fixed height for the Card
+        height: '50vh',
       }}
       onMouseEnter={handleHover}
       onMouseLeave={handleLeave}
@@ -47,13 +40,13 @@ const ComicPanel = ({ text }) => {
         <div
           style={{
             position: 'relative',
-            height: '100%', // Ensure the inner div takes up full height
+            height: '100%',
           }}
         >
           <CardMedia
             component="img"
             alt="Comic Panel"
-            height="100%" // Make the CardMedia take up full height
+            height="100%"
             image={image}
           />
           {showText && (
@@ -66,7 +59,7 @@ const ComicPanel = ({ text }) => {
                 backgroundColor: 'rgba(0, 0, 0, 0.5)',
                 color: 'white',
                 fontSize: '14px',
-                width: '100%', // Make the CardContent take up full width
+                width: '100%',
               }}
             >
               <Typography>{text}</Typography>

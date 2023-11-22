@@ -5,18 +5,21 @@ import {
   Typography,
   Container,
   Link,
-  Button,
-  Box,
   Divider,
 } from "@mui/material";
 import { NavLink } from "react-router-dom";
-import GitHubIcon from "@mui/icons-material/GitHub";
+import { Footer } from "./Footer";
+
+/**
+ * @author mrin247
+ * @function Layout
+ **/
 
 const Layout = ({ children }) => {
   return (
     <div>
       <AppBar
-        position="static"
+        position="fixed"
         style={{
           backgroundColor: "white",
           height: "48px",
@@ -33,11 +36,10 @@ const Layout = ({ children }) => {
               to="/"
               component={NavLink}
               style={{
-                color:"black",
-                fontWeight:'bold',
+                color: "black",
+                fontWeight: "bold",
                 textDecoration: "none",
                 marginRight: "15px",
-                
               }}
             >
               COMIC·E
@@ -53,46 +55,12 @@ const Layout = ({ children }) => {
             >
               Generate
             </Link>
-            <Link
-              component={NavLink}
-              to="/another-route"
-              underline="none"
-              color="inherit"
-              style={{ marginRight: 15 }}
-            >
-              Another Route
-            </Link>
-            <Link
-              component={NavLink}
-              to="/yet-another-route"
-              underline="none"
-              color="inherit"
-            >
-              Yet Another Route
-            </Link>
           </div>
-          <Button color="inherit">Sign In</Button>
         </Toolbar>
       </AppBar>
-      <Divider/>
+      <Divider />
       <Container>{children}</Container>
-      <Box
-        sx={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          color: "black",
-          padding: 2,
-          position: "absolute",
-          bottom: 0,
-          width: "100%",
-        }}
-      >
-        <GitHubIcon />
-        <Typography variant="body2" sx={{ marginLeft: 1 }}>
-          Follow us on GitHub for updates
-        </Typography>
-      </Box>
+      <Footer />
     </div>
   );
 };
