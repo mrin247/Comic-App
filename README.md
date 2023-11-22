@@ -1,70 +1,97 @@
-# Getting Started with Create React App
+# Comic Generator App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to the Comic Generator App! This app allows users to create and download comic strips with custom panels and titles.
 
-## Available Scripts
+## Live Link: https://comic-e.netlify.app/
 
-In the project directory, you can run:
+## Overview
 
-### `npm start`
+The Comic Generator App is a web application that enables users to generate comic strips by providing instructions for each panel. The generated comics are displayed in a 5x2 grid, and users can download them as a PDF.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Key Features:
+- **Dynamic Comic Generation**: Users can dynamically provide instructions for each panel, and the app generates comic images accordingly.
+- **PDF Download**: Users can download the generated comic strip as a PDF file.
+- **Responsive Design**: The app is designed to work seamlessly on various devices, ensuring a great user experience.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Snapshots:
+![image](https://github.com/mrin247/Comic-App/assets/72962881/75589508-9750-4f73-9c98-91229438bde3)
+![image](https://github.com/mrin247/Comic-App/assets/72962881/61587de5-d69d-4bdd-b152-bfa610ceb79c)
+![image](https://github.com/mrin247/Comic-App/assets/72962881/0f039b9e-54dc-434a-b8d2-6785d79b6da3)
+![image](https://github.com/mrin247/Comic-App/assets/72962881/8a9b999d-696d-4b7d-9265-351ca71edf3f)
+![image](https://github.com/mrin247/Comic-App/assets/72962881/1053c173-3fa8-4695-96db-629c12070991)
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Folder Structure
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The project follows a standard React folder structure:
 
-### `npm run eject`
+```plaintext
+.
+├── public
+├── src
+│   ├── components
+|   |   |── CoicForm
+|   |   |── CoicPanel
+|   |   |── CoicStrip
+|   |   |── Layout
+|   |   |── Footer
+│   ├── pages
+|   |   |── homePage
+|   |   |── generatePage
+│   ├── api.js
+│   ├── App.js
+│   └── index.js
+├── package.json
+└── README.md
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Input Format
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```plaintext
+Panel 1 instructions...
+Panel 2 instructions...
+...
+Panel 10 instructions...
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## API
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+curl -X POST \
+  https://xdwvg9no7pefghrn.us-east-1.aws.endpoints.huggingface.cloud \
+  -H 'Accept: image/png' \
+  -H 'Authorization: Bearer YOUR_API_KEY' \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "inputs": "Panel 1 instructions..."
+  }'
+```
 
-## Learn More
+## Features that can be added:
+- Authentication
+- Community sharing
+- Multiple page pdf
+- Random generated instructions
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+  ## Now Let's create a comic:
+  Instructions:
+  1. Begin in a Peaceful Village
+  2. Discover a Mysterious Old Book
+  3. Transport to a Magical World
+  4. Meet a Wise Talking Plant
+  5. Embark on a Quest for the Crystal of Radiance
+  6. Encounter Dancing Robots
+  7. Befriend Friendly Aliens
+  8. Time-Traveling Scientist's Involvement
+  9. Superhero Pancakes Come to Life
+  10. Final Showdown and Return Home
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+Generated PDF:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+![image](https://github.com/mrin247/Comic-App/assets/72962881/327979c2-fd2a-4463-9595-28cd58cd6559)
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
