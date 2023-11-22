@@ -6,7 +6,7 @@ Welcome to the Comic Generator App! This app allows users to create and download
 
 ## Overview
 
-The Comic Generator App is a web application that enables users to generate comic strips by providing instructions for each panel. The generated comics are displayed in a 5x2 grid, and users can download them as a PDF.
+The Comic Generator App is a web application that enables users to generate comic strips by providing instructions for each panel. The generated comics are displayed in a grid, and users can download them as a PDF.
 
 ## Key Features:
 - **Dynamic Comic Generation**: Users can dynamically provide instructions for each panel, and the app generates comic images accordingly.
