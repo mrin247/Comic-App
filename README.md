@@ -14,15 +14,11 @@ The Comic Generator App is a web application that enables users to generate comi
 - **Responsive Design**: The app is designed to work seamlessly on various devices, ensuring a great user experience.
 
 ## Snapshots:
-![image](https://github.com/mrin247/Comic-App/assets/72962881/75589508-9750-4f73-9c98-91229438bde3)
-![image](https://github.com/mrin247/Comic-App/assets/72962881/61587de5-d69d-4bdd-b152-bfa610ceb79c)
-![image](https://github.com/mrin247/Comic-App/assets/72962881/0f039b9e-54dc-434a-b8d2-6785d79b6da3)
-![image](https://github.com/mrin247/Comic-App/assets/72962881/8a9b999d-696d-4b7d-9265-351ca71edf3f)
-![image](https://github.com/mrin247/Comic-App/assets/72962881/1053c173-3fa8-4695-96db-629c12070991)
-
-
-
-
+![Screenshot 2023-11-24 192603](https://github.com/mrin247/Comic-App/assets/72962881/abfc2cce-c207-4a45-8743-1900c2d7e216)
+![Screenshot 2023-11-23 002140](https://github.com/mrin247/Comic-App/assets/72962881/63d58221-e239-4ea8-bfc1-23afd88028cd)
+![Screenshot 2023-11-23 000348](https://github.com/mrin247/Comic-App/assets/72962881/b91c056c-f9b2-4ce3-b97a-88f1917cbcc2)
+![Screenshot 2023-11-23 000421](https://github.com/mrin247/Comic-App/assets/72962881/dfb82eba-52f4-470a-9f31-5234ee8577cb)
+![Screenshot 2023-11-23 001817](https://github.com/mrin247/Comic-App/assets/72962881/52aa14b8-5c90-492f-9251-6150c3cf0755)
 
 ## Folder Structure
 
@@ -92,6 +88,7 @@ curl -X POST \
 
 Generated PDF:
 
-![image](https://github.com/mrin247/Comic-App/assets/72962881/327979c2-fd2a-4463-9595-28cd58cd6559)
+![Screenshot 2023-11-23 001954](https://github.com/mrin247/Comic-App/assets/72962881/dab619a5-38d7-4f05-8a83-721c5fb8ea9f)
+
 
 
