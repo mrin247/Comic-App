@@ -16,9 +16,6 @@ const GeneratePage = () => {
   const handleFormSubmit = async (inputText, index) => {
     try {
       setLoading(true);
-      
-
-      // Check if the image for the current input is already generated
 
       try {
         if (inputText) {
